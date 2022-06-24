@@ -41,11 +41,10 @@ img[src$='.png']:hover {
 
 /* Holds everything */
 .container {
-    background-color: var(--bgc);
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: min-content 4fr;
+    grid-template-rows: min-content;
 }
 
 /* --------------------------------------------- */
@@ -213,11 +212,13 @@ input:focus {
 
 /* Holds the rest of the content */
 .content {
+    grid-row: 2 / 5;
     display: grid;
     grid-template-columns: 1fr 300px;
     padding: 20px 40px;
     gap: 25px;
     overflow: auto;
+    background-color: var(--bgc);
 }
 
 /* Each of the different projects */
@@ -360,6 +361,11 @@ input:focus {
 .person img {
     height: auto;
     width: 80px;
+    transition: all 0.2s;
+}
+
+.person img:hover {
+    transform: scale(1.1);
 }
 
 .person p {
