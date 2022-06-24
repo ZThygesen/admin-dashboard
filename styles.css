@@ -1,0 +1,367 @@
+:root {
+    --accent: #297a12;
+    --content: #ecfdf5;
+    --bgc: #e2e8f0;
+    --shadow: #acacac;
+    --green-hover: #1c6308;
+    --icon-hover: #297a12;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --------------------------------------------- */
+
+/* Image/icon animations */
+img[src$='.svg'] {
+    transition: all 0.2s;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+img[src$='.svg']:hover {
+    background-color: var(--icon-hover);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+img[src$='.png'] {
+    transition: all 0.2s;
+}
+
+img[src$='.png']:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* --------------------------------------------- */
+
+/* Holds everything */
+.container {
+    background-color: var(--bgc);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: min-content 4fr;
+}
+
+/* --------------------------------------------- */
+
+/* Top header section */
+.header {
+    background-color: var(--content);
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: min-content min-content;
+    padding-left: 30px;
+    box-shadow: 0 5px 5px -5px var(--shadow);
+    padding-bottom: 10px;
+    z-index: 1;
+}
+
+/* Search bar */
+.search {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    appearance: none;
+    border-style: none;
+    background-color: var(--bgc);
+    border-radius: 20px;
+    height: 30px;
+    width: 90%;
+    padding-left: 15px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--accent);
+}
+
+/* Upper right profile section */
+.profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+.profile img#icon {
+    height: auto;
+    width: 80px;
+}
+
+/* Welcome section */
+.welcome {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.welcome img {
+    height: auto;
+    width: 100px;;
+}
+
+/* Buttons */
+.options {
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.options button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border-style: none;
+    width: 100px;
+    background-color: var(--accent);
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+
+.options button:hover {
+    background-color: var(--green-hover);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.options ul {
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+/* --------------------------------------------- */
+
+/* Dashboard */
+.sidebar {
+    background-color: var(--accent);
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    color: #fff;
+    padding: 20px;
+    display: grid;
+    gap: 30px;
+   grid-template-rows: 76px 306px 153px;
+}
+
+.sidebar p {
+    font-weight: 700;
+}
+
+.sidebar h1 {
+    margin: 0;
+    align-self: center;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.sidebar li {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 5px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.sidebar a:hover {
+    transform: scale(1.1);
+    background-color: var(--green-hover);
+    border-radius: 15px;
+}
+
+.sidebar li img {
+    justify-self: center;
+}
+
+.sidebar li img, .sidebar li p {
+    align-self: center;
+}
+
+/* --------------------------------------------- */
+
+/* Holds the rest of the content */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    padding: 20px 40px;
+    gap: 25px;
+    overflow: auto;
+}
+
+/* Each of the different projects */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 225px;
+    gap: 25px;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 6px;
+    background-color: var(--content); 
+    padding: 15px;
+    border-left: 8px solid var(--accent);
+    box-shadow: 3px 3px 5px var(--shadow);
+}
+
+.card .title {
+    font-weight: 700;
+    margin: 0;
+    align-self: end;
+    font-size: 16px;
+}
+
+.card .description {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.card .options {
+    display: grid;
+    grid-template-columns: 24px 24px 24px;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+/* The right side of the content (announcements and trending) */
+.right {
+    display: grid;
+    grid-auto-rows: min-content;
+}
+
+/* Announcements section*/
+.announcements {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    padding: 20px 40px;
+    background-color: var(--content);
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px var(--shadow);
+}
+
+.announcement {
+    border-bottom: 1px solid #aaaaaa;
+    padding: 20px 0;
+}
+
+.announcement .title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.announcement .message {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 3px;
+}
+
+/* Trending section */
+.trending {
+    margin-top: 20px;
+}
+
+.people {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    background-color: var(--content);
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px var(--shadow);
+    padding: 20px;
+    gap: 30px;
+}
+
+.person {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.person .img {
+    height: 60px;
+    width: 60px;
+    background-size: cover;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+#jesse {
+    background-image: url(./images/jesse.jpg);
+    background-position: center top -6px;
+}
+
+#gus {
+    background-image: url(./images/gus.png);
+    background-position: center;
+}
+
+#saul {
+    background-image: url(./images/saul.webp);
+    background-position: center right -4px;
+}
+
+#mike {
+    background-image: url(./images/mike.jpg);
+}
+
+.info {
+    display: grid;
+    grid-auto-rows: min-content min-content;
+    gap: 5px;
+}
+
+.info :first-child {
+    font-weight: 500;
+}
+
+.info :nth-child(2) {
+    font-weight: 300;
+}
+
+.person img {
+    height: auto;
+    width: 80px;
+}
+
+.person p {
+    margin: 0;
+}
